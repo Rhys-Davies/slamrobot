@@ -1,5 +1,7 @@
 # A Robot! 
 
+A video of it in action can be found here: https://www.youtube.com/watch?v=Nohl0ReMUO8
+
 This was a univeristy project to program a mobile (differential drive) robot to perform
 autonomous mapping and localisation in an arena containing 5 distinct landmarks. The robot
 provided to us was based on a raspberryPi 2, and a raspberryPi Camera was provided for perception.
