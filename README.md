@@ -10,9 +10,11 @@ provided to us was based on a raspberryPi 2, and a raspberryPi Camera was provid
 
 Perception is simple colour segmentation, with the blobs filtered and sorted into potential valid 
 landmarks which are then sanity checked. The distance and angle to any valid landmarks is then calculated.
-Image processing is done in the HSV colourspace.
+Image processing is done in the HSV colourspace with OpenCV.
 
 Mapping and localisation is accomplished using EKF-SLAM.
+
+The entire project was implemented in Python 3.4.
 
 # Dependencies
 
@@ -26,5 +28,6 @@ These are the dependencies required for all python code in this repository.
   * PIL-ImageTk
 
 # Authors:
+
 Lachlan Gordon (https://github.com/lachlangor) and myself, as noted in each file.
 
