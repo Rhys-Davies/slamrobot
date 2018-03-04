@@ -37,7 +37,8 @@ class lndmrkDetector():
     # Use this one for reading frames from the PiCamera.
     # PiCamera must be running in raw bgr array mode.
     def updateFrame(self, bgrArray):
-        if bgrArray == None:
+        #if bgrArray == None:
+        if bgrArray.any == None:
             print('No frame to update')
             return None
         else:

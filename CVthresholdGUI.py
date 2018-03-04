@@ -4,6 +4,7 @@
 # TODO: Connect to robot via network.
 #           - Retrievel of images directly from pi cam.
 #           - Uploading/Saving thresholds directly to robot.
+#           - Fix image colourspace being displayed in BGR instead of RGB
 #
 # Threshold Tool - v3
 # Rhys Davies
@@ -104,9 +105,9 @@ class thGui(tk.Frame):
         self.frameIm.grid(column=0,row=0)
         self.frameTh.grid(column=1,row=0)
 
-        self.oTh = np.array([[20, 20, 20], [179, 255, 255]])
+        self.oTh = np.array([[20, 20, 20], [179, 255, 255]], dtype=np.uint8)
     # lTh = [[red1 lower],[red1 upper],[red2 lower],[red2 upper],[green lower],[green upper],[blue lower],[blue upper]]
-        self.lTh = np.array([[170, 21, 22],[179, 255, 255],[23, 24, 25],[10, 255, 255],[26, 27, 28],[179, 255, 255],[29, 30, 31],[179, 255, 255]])
+        self.lTh = np.array([[170, 21, 22],[179, 255, 255],[23, 24, 25],[10, 255, 255],[26, 27, 28],[179, 255, 255],[29, 30, 31],[179, 255, 255]], dtype=np.uint8)
         
         self.loadOnStartup()
         
@@ -136,7 +137,7 @@ class thGui(tk.Frame):
         self.imageBitmask = Image.fromarray(self.imageBitmask)
         self.imageBitmask = ImageTk.PhotoImage(self.imageBitmask)
         self.imgMasked.configure(image=self.imageBitmask)
-        self.imgMasked.image = self.imageBitmask 
+        self.imgMasked.image = self.imageBitmask Error in land
 
 
     def loadOnStartup(self):
@@ -172,24 +173,24 @@ class thGui(tk.Frame):
         lhw = self.lhwrap.get()
 
         if mode == 'obj':
-            self.oTh = np.array([[lh,ls,lv],[hh,hs,hv]]) 
+            self.oTh = np.array([[lh,ls,lv],[hh,hs,hv]], dtype=np.uint8) 
             #print('Updated Obs threshold')
             self.obj.setThresh(self.oTh)
         elif mode == 'lndmrkr':
-            self.lTh[0,:] = np.array([lh,ls,lv])
-            self.lTh[1,:] = np.array([hh,hs,hv])
-            self.lTh[2,:] = np.array([lhw,ls,lv])
-            self.lTh[3,:] = np.array([hhw,hs,hv]) 
+            self.lTh[0,:] = np.array([lh,ls,lv], dtype=np.uint8)
+            self.lTh[1,:] = np.array([hh,hs,hv], dtype=np.uint8)
+            self.lTh[2,:] = np.array([lhw,ls,lv], dtype=np.uint8)
+            self.lTh[3,:] = np.array([hhw,hs,hv], dtype=np.uint8) 
             #print('Updated landmark threshold')
             self.lnd.setThresh(self.lTh)
         elif mode == 'lndmrkg':
-            self.lTh[4,:] = np.array([lh,ls,lv])
-            self.lTh[5,:] = np.array([hh,hs,hv])  
+            self.lTh[4,:] = np.array([lh,ls,lv], dtype=np.uint8)
+            self.lTh[5,:] = np.array([hh,hs,hv], dtype=np.uint8)  
             #print('Update landmark g threshold')
             self.lnd.setThresh(self.lTh)
         elif mode == 'lndmrkb':
-            self.lTh[6,:] = np.array([lh,ls,lv])
-            self.lTh[7,:] = np.array([hh,hs,hv])
+            self.lTh[6,:] = np.array([lh,ls,lv], dtype=np.uint8)
+            self.lTh[7,:] = np.array([hh,hs,hv], dtype=np.uint8)
             #print('Update landmark b threshold')
             self.lnd.setThresh(self.lTh)
         else:
