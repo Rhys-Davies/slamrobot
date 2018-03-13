@@ -137,7 +137,7 @@ class thGui(tk.Frame):
         self.imageBitmask = Image.fromarray(self.imageBitmask)
         self.imageBitmask = ImageTk.PhotoImage(self.imageBitmask)
         self.imgMasked.configure(image=self.imageBitmask)
-        self.imgMasked.image = self.imageBitmask Error in land
+        self.imgMasked.image = self.imageBitmask
 
 
     def loadOnStartup(self):
