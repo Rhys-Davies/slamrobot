@@ -40,7 +40,6 @@ class objDetector():
         else:
             self.image = bgrArray.copy()
             self.hsvImage = cv2.cvtColor(self.image, cv2.COLOR_RGB2HSV)
-            #self.image = cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB)
             #print('Import operation complete')
             self.obsBoundBox = None
             self.landMarkBoundBox = None
@@ -107,7 +106,7 @@ class objDetector():
         cx = x+(w/2)
         dist, ang = self.findObjLoc(w,cx)
         #print('Returning dist ang to obs')
-        print('Obj at ' + str(dist) + ', ' + str(ang))
+        #print('Obj at ' + str(dist) + ', ' + str(ang))
         return dist, ang
 
     ############# SETTER FUNCTIONS #############

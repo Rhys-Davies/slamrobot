@@ -45,7 +45,7 @@ class lndmrkDetector():
             self.image = bgrArray.copy()
             #cv2.imshow('test',self.image)
             #cv2.waitKey(500)
-            self.hsvImage = cv2.cvtColor(self.image, cv2.COLOR_BGR2HSV)
+            self.hsvImage = cv2.cvtColor(self.image, cv2.COLOR_RGB2HSV)
             #print('Import operation complete')
             self.obsBoundBox = None
             self.landMarkBoundBox = None
@@ -102,7 +102,7 @@ class lndmrkDetector():
     # Finds all red, green and blue squares
     # Needs some serious re-writing, not very memory efficient.
     def findLandmarks(self):
-        print('Detecting landmarks...')
+        #print('Detecting landmarks...')
         self.processImage()
     
         self.boundBox = []
@@ -169,7 +169,7 @@ class lndmrkDetector():
                     #print('Next')
                     pass
                 
-        print('Landmarks found: ' + str(len(landmark)))
+        #print('Landmarks found: ' + str(len(landmark)))
         returnList = []
 
         for i in range(len(landmark)):

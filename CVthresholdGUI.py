@@ -224,6 +224,7 @@ class thGui(tk.Frame):
 
         if self.fn:
             self.image = cv2.imread(self.fn)
+            self.image = cv2.cvtColor(self.image, cv2.COLOR_BGR2RGB)
             #self.image = cv2.flip(self.image,-1)
             self.lnd.updateFrame(self.image)
             self.obj.updateFrame(self.image)
@@ -313,6 +314,11 @@ class thGui(tk.Frame):
 
         alist = self.obj.findObj()
         blist = self.lnd.findLandmarks()
+
+        print('Landmark Detector Found:')
+        print(blist)
+        print('Object Detector Found:')
+        print(alist)
 
         var = self.thVar.get()
 

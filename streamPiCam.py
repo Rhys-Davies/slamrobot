@@ -5,7 +5,7 @@ import numpy as np
 import proto
 import time
 
-# Threaded camera fram grabber
+# Threaded camera frame grabber
 # Heavily inspired by pyimagesearch's tutorial
 #
 # Astute readers will notice a design flaw that will (and did) cause 
