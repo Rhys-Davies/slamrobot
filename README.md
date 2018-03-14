@@ -6,6 +6,8 @@ This was a university project to program a mobile (differential drive) robot to 
 autonomous mapping and localisation in an arena containing 5 distinct landmarks. The robot
 provided to us was based on a raspberryPi 2, and a raspberryPi Camera was provided for sensing.
 
+I have plans of reusing some of this code for my own (eventual) robot project, hence the recent tinkering.
+
 # Operation
 
 Perception is simple colour segmentation, with the blobs filtered and sorted into potential valid 
@@ -20,12 +22,12 @@ The entire project was implemented in Python 3.4.
 
 These are the dependencies required for all python code in this repository.
 
-* OpenCV 3.2.0 (Compiled with Python 3 bindings)
+* OpenCV 3.2.0 or above ("pip install opencv-python && opencv-contrib-python" will install OpenCV 3.4.x)
 * Pyhon 3.4
   * TKinter
   * Numpy
   * Pillow
-  * PIL-ImageTk
+  * PIL-ImageTk (On linux this will have to be installed via apt. A full install of Anaconda contains this package already)
 
 # Authors:
 
