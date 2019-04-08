@@ -55,7 +55,7 @@ class objDetector():
     # This function will always return the largest
     # single contour present
     def findOneContour(self):
-        _, contours, _ = cv2.findContours(self.obit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv2.findContours(self.obit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         boundingBoxes = [cv2.boundingRect(c) for c in contours]
         if len(boundingBoxes) <= 0:
             print('found nothin, leave')

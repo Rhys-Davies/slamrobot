@@ -109,9 +109,9 @@ class lndmrkDetector():
         self.boundBoxCol = []
 
         # Find all contours in the r,g,b bitmasks
-        _, cntr, _ = cv2.findContours(self.lrbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        _, cntg, _ = cv2.findContours(self.lgbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        _, cntb, _ = cv2.findContours(self.lbbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cntr, _ = cv2.findContours(self.lrbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cntg, _ = cv2.findContours(self.lgbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        cntb, _ = cv2.findContours(self.lbbit, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         cnt = cntr+cntg+cntb 
 
         # If < 3 contours, a landmark cannot possibly exist
