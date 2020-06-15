@@ -20,8 +20,8 @@ The entire project was implemented in Python 3.4.
 
 These are the dependencies required for all python code in this repository.
 
-* OpenCV 3.2.0 or above ("pip install opencv-python && opencv-contrib-python" will install OpenCV 3.4.x)
-* Pyhon 3.4
+* OpenCV 3.2.0 or later ("pip install opencv-python && opencv-contrib-python" will install OpenCV 3.4.x)
+* Pyhon 3.4 or later
   * TKinter
   * Numpy
   * Pillow
