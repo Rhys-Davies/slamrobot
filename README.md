@@ -6,8 +6,6 @@ This was a university project to program a mobile (differential drive) robot to 
 autonomous mapping and localisation in an arena containing 5 distinct landmarks. The robot
 provided to us was based on a raspberryPi 2, and a raspberryPi Camera was provided for sensing.
 
-I have plans of reusing some of this code for my own (eventual) robot project, hence the recent tinkering.
-
 # Operation
 
 Perception is simple colour segmentation, with the blobs filtered and sorted into potential valid 
